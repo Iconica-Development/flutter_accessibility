@@ -1,5 +1,8 @@
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+// SPDX-FileCopyrightText: 2024 Iconica
+//
+// SPDX-License-Identifier: BSD-3-Clause
+
+///
+library flutter_accessibility;
+
+export "src/semantics_group.dart";
