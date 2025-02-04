@@ -6,3 +6,4 @@
 library flutter_accessibility;
 
 export "src/semantics_group.dart";
+export "src/semantics_widget.dart";

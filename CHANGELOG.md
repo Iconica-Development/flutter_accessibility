@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Added SemanticsWidget and SemanticsGroup for accessibility support.
