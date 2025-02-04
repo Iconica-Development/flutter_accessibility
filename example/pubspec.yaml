@@ -1,0 +1,24 @@
+name: flutter_accessibility_example
+description: "Flutter Accessibility Example"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_accessibility:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_iconica_analysis:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub
+    version: ^7.0.0
+
+flutter:
+  uses-material-design: true
