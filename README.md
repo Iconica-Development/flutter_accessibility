@@ -1,24 +1,37 @@
 # Flutter Accessibility
 
-Short description of what your package is, why you created it. What issues it fixes and how it works. Also mention the available platforms
+Flutter widgets are not accessible by default for Appium and other testing frameworks. This package adds accessibility to your widgets by wrapping them with CustomSemantics and SemanticsGroup.
+This will provide an accessibility_id for the widget.
 
-## Setup
+There is a limitation because this doesn't work on android for textfields because they will not be editable again so for textfields you need to add isTextField: true to the CustomSemantics widget.
 
-What setup steps are necessary and why?
-
-<details>
-<summary>PLATFORM</summary>
-    
-specific platform steps
-
-</details>
 
 ## How to use
 
-How can we use the package describe the most common ways with examples in 
+You can wrap your widget with CustomSemantics to add accessibility to your widget.
 ```dart
- codeblocks
+ CustomSemantics(
+          identifier: "text",
+          child: Text("Text"),
+        ),
 ``` 
+
+You can group widgets together with a SemanticsGroup to update the identifier of underlying CustomSemantics with the identifier of the SemanticsGroup.
+```dart
+ SemanticsGroup(
+          identifier: "group",
+          children: [
+            CustomSemantics(
+              identifier: "text1",
+              child: Text("Text1"),
+            ),
+            CustomSemantics(
+              identifier: "text2",
+              child: Text("Text2"),
+            ),
+          ],
+        ),
+```
 
 ## Issues
 
