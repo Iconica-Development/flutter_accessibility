@@ -1,6 +1,6 @@
 name: flutter_accessibility
 description: "Flutter Package containing utility widgets to help with Semantics in Flutter apps"
-version: 0.0.1
+version: 0.0.2
 publish_to: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
 homepage: https://github.com/Iconica-Development/flutter_accessibility
 repository: https://github.com/Iconica-Development/flutter_accessibility
