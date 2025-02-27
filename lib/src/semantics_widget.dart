@@ -30,10 +30,15 @@ class CustomSemantics extends StatelessWidget {
   const CustomSemantics({
     required this.identifier,
     required this.child,
-    this.excludeSemantics,
+    this.excludeSemantics = false,
     this.isTextField = false,
+    this.value,
+    this.buttonWithVariableText = false,
     super.key,
   });
+
+  /// Manually set the value. Needed for Texts.
+  final String? value;
 
   /// The widget that should be wrapped with a [Semantics] widget.
   final Widget child;
@@ -42,13 +47,14 @@ class CustomSemantics extends StatelessWidget {
   final String? identifier;
 
   /// If the [Semantics] widget should exclude the semantics of its children.
-  /// Only use this when you are sure that you want to change the behavior.
-  /// If not set, it will automatically be set to a value by the widget.
-  final bool? excludeSemantics;
+  final bool excludeSemantics;
 
   /// If the widget is a textfield, the [child] can't be excluded. This is
   /// because otherwise the textfield doesn't work in e2e tests with Appium.
   final bool isTextField;
+
+  /// If the widget is a button with variable text.
+  final bool buttonWithVariableText;
 
   @override
   Widget build(BuildContext context) {
@@ -63,15 +69,15 @@ class CustomSemantics extends StatelessWidget {
 
     var isAndroid = !kIsWeb && Platform.isAndroid;
 
-    var excludeSemantics = this.excludeSemantics ?? (!isTextField && isAndroid);
-
-    var label = !isTextField && isAndroid ? finalIdentifier : null;
+    var excludeSemantics =
+        ((!isTextField && !buttonWithVariableText) && isAndroid) ||
+            this.excludeSemantics;
 
     return Semantics(
       excludeSemantics: excludeSemantics,
       container: true,
-      label: label,
       identifier: finalIdentifier,
+      value: isAndroid ? value : null,
       child: child,
     );
   }
