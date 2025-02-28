@@ -1,3 +1,8 @@
+## 0.0.3
+
+* Downgrade the dart sdk dependency to 3.5.3 in line with other packages
+* Pin flutter version with fvm
+
 ## 0.0.2
 
 * Add more specific settings to work properly on Android.

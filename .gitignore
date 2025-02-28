@@ -36,3 +36,6 @@ linux/
 macos/
 web/
 windows/
+
+# FVM Version Cache
+.fvm/
