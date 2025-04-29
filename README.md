@@ -1,9 +1,11 @@
 # Flutter Accessibility
 
-Flutter widgets are not accessible by default for Appium and other testing frameworks. This package adds accessibility to your widgets by wrapping them with CustomSemantics and SemanticsGroup.
+Flutter widgets are not accessible by default for Appium and other testing frameworks.
+This package adds accessibility to your widgets by wrapping them with CustomSemantics and SemanticsGroup.
 This will provide an accessibility_id for the widget.
 
-There is a limitation because this doesn't work on android for textfields because they will not be editable again so for textfields you need to add isTextField: true to the CustomSemantics widget.
+Note that on Android this doesn't work on textfields because they will not be editable again.
+Because of this you will need to add `isTextField: true` to the CustomSemantics widget.
 
 
 ## How to use
@@ -35,7 +37,8 @@ You can group widgets together with a SemanticsGroup to update the identifier of
 
 ## Issues
 
-Please file any issues, bugs or feature request as an issue on our [GitHub](https://github.com/Iconica-Development/flutter_accessibility/issues) page. Commercial support is available if you need help with integration with your app or services. You can contact us at [support@iconica.nl](mailto:support@iconica.nl).
+Please file any issues, bugs or feature request as an issue on our [GitHub](https://github.com/Iconica-Development/flutter_accessibility/issues) page.
+Commercial support is available if you need help with integration with your app or services. You can contact us at [support@iconica.nl](mailto:support@iconica.nl).
 
 ## Want to contribute
 
