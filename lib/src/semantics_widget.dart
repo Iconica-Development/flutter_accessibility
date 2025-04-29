@@ -34,6 +34,7 @@ class CustomSemantics extends StatelessWidget {
     this.isTextField = false,
     this.value,
     this.buttonWithVariableText = false,
+    this.enabled,
     super.key,
   });
 
@@ -55,6 +56,9 @@ class CustomSemantics extends StatelessWidget {
 
   /// If the widget is a button with variable text.
   final bool buttonWithVariableText;
+
+  /// If the widget is enabled.
+  final bool? enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +82,7 @@ class CustomSemantics extends StatelessWidget {
       container: true,
       identifier: finalIdentifier,
       value: isAndroid ? value : null,
+      enabled: enabled,
       child: child,
     );
   }

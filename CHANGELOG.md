@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Allow indicating if a widget is disabled or not
+
 ## 0.0.3
 
 * Downgrade the dart sdk dependency to 3.5.3 in line with other packages
